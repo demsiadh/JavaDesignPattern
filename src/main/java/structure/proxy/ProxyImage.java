@@ -22,7 +22,7 @@ public class ProxyImage implements Image {
 
     @Override
     public void display() {
-        this.realImage = new RealImage(Objects.requireNonNullElse(fileName, "默认文件"));
+        this.realImage = new RealImage(fileName.isEmpty()? "默认文件": fileName);
         this.realImage.display();
     }
 }
